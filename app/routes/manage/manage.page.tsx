@@ -6,7 +6,7 @@ export const Manage: FC = (_) => {
   return (
     <Layout title="Upravljanje pozivnicama">
       <Header />
-      <h1>Pozvani ljudi</h1>
+      <h1 class="text-7xl">Pozvani ljudi</h1>
     </Layout>
   );
 };

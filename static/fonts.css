@@ -41,15 +41,41 @@
   }
 }
 
+@font-face {
+  font-family: "Zodiak-Variable";
+  src:
+    url("./fonts/Zodiak-Variable.woff2") format("woff2"),
+    url("./fonts/Zodiak-Variable.woff") format("woff"),
+    url("./fonts/Zodiak-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zodiak-VariableItalic";
+  src:
+    url("./fonts/Zodiak-VariableItalic.woff2") format("woff2"),
+    url("./fonts/Zodiak-VariableItalic.woff") format("woff"),
+    url("./fonts/Zodiak-VariableItalic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}
+
 * {
   font-size: var(--text-base);
   line-height: var(--text-base--line-height);
-  font-family: "Merriweather", serif;
+  font-family: "Zodiak-Variable", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-variation-settings: "wdth" 100;
   line-height: var(--lh-base);
+}
+
+.italic {
+  font-family: "Zodiak-VariableItalic", serif;
 }
 
 .text-xs {
