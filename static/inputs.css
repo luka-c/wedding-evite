@@ -1,0 +1,28 @@
+input,
+select {
+  border: 1px solid;
+  border-radius: var(--radius);
+  border-color: var(--border);
+  padding: calc(var(--padding-sm) - 2px) var(--padding-lg) var(--padding-sm);
+}
+
+input:active,
+input:focus-visible,
+select:active,
+select:focus-visible {
+  outline: transparent;
+  border-color: var(--primary);
+}
+
+input:disabled,
+input:read-only,
+select:disabled,
+select:read-only {
+  background-color: oklch(from var(--border) l c h / 0.5);
+  color: oklch(from var(--text) l c h / 0.5);
+}
+
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+}
