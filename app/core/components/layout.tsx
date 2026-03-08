@@ -1,6 +1,6 @@
 import type { FC } from "hono/jsx";
 import { Head } from "./head.tsx";
-import { tLayoutProps } from "../props/layout_props.tsx";
+import { tLayoutProps } from "../props/layout.props.tsx";
 
 export const Layout: FC<tLayoutProps> = (props) => {
   return (

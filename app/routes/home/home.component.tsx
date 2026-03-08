@@ -4,7 +4,7 @@ import { Layout } from "../../core/components/layout.tsx";
 export const Home: FC = () => {
   return (
     <Layout title="Pozvani ste na vjenčanje">
-      <h1>Homepage</h1>
+      <h1 class="text-2xl">Homepage</h1>
       <List />
     </Layout>
   );
