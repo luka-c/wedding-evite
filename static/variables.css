@@ -9,8 +9,6 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  --header-height: 80px;
-
   --padding-xs: 0.25rem;
   --padding-sm: 0.5rem;
   --padding-md: 0.75rem;
@@ -31,4 +29,7 @@
   --gap-lg: 1rem;
   --gap-xl: 1.5rem;
   --gap-xxl: 2rem;
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 150ms;
 }

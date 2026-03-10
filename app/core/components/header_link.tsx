@@ -20,8 +20,8 @@ const linkClass = css`
   border-radius: var(--radius-4xl);
 
   transition:
-    color 350ms ease,
-    background-color 350ms ease;
+    color var(--transition-duration) var(--timing-function),
+    background-color var(--transition-duration) var(--timing-function);
 
   &:hover {
     background-color: var(--primary);
