@@ -6,8 +6,11 @@
     "@std/text": "jsr:@std/text@^1.0.17",
     "hono": "jsr:@hono/hono@^4.12.5"
   },
+
+  "unstable": ["kv"],
   "tasks": {
-    "start": "deno run --allow-net --allow-read allow-env --unstable-kv --watch index.tsx"
+    "start": "deno run -A index.tsx",
+    "dev": "deno run --allow-net --allow-read allow-env --watch index.tsx"
   },
   "compilerOptions": {
     "jsx": "precompile",
