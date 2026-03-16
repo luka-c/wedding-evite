@@ -1,6 +1,8 @@
 dist
 sandbox
 
+.DS_STORE
+
 # Cloudflare Workers
 worker
 .wrangler
