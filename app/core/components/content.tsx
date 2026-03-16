@@ -1,6 +1,6 @@
 import { FC } from "hono/jsx";
 import { css } from "hono/css";
-import { tContentProps } from "../props/content_props.tsx";
+import { tContentProps } from "../props/content.props.tsx";
 
 export const Content: FC<tContentProps> = (props) => {
   return <div class={wrapperClass}>{props.children}</div>;

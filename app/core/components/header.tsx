@@ -7,7 +7,6 @@ export const Header: FC = () => {
     <nav class={navClass}>
       <HeaderLink link="/" title="Naslovnica" />
       <HeaderLink link="/manage" title="Upravljanje Pozivnicama" />
-      <HeaderLink link="/login" title="Login" />
     </nav>
   );
 };

@@ -1,8 +1,21 @@
 import { Hono } from "hono";
 import { Manage } from "./manage.page.tsx";
 import { guestService } from "./services/guest.service.ts";
+import { basicAuth } from "hono/basic-auth";
 
 const app = new Hono();
+
+app.use(
+  "*",
+  basicAuth({
+    verifyUser: (username, password) => {
+      const expectedUser = Deno.env.get("ADMIN_USER") || "admin";
+      const expectedPass = Deno.env.get("ADMIN_PASS") || "1234";
+
+      return username === expectedUser && password === expectedPass;
+    },
+  }),
+);
 
 app.get("/", (c) => {
   return c.html(<Manage />);

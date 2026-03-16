@@ -12,6 +12,11 @@ export const guestService = {
     return guests;
   },
 
+  async get(id: string): Promise<tGuest | null> {
+    const record = await kv.get<tGuest>(["guests", id]);
+    return record.value;
+  },
+
   async add(names: string, attending: number = 0): Promise<tGuest> {
     const id = crypto.randomUUID();
     const guest: tGuest = { id, names, attending };
