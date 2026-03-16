@@ -7,15 +7,26 @@ export const listWrapper = css`
   margin-top: var(--margin-lg);
 `;
 
+export const guestCardContainer = css`
+  container-name: guestCard;
+  container-type: inline-size;
+`;
+
 export const guestCard = css`
   display: flex;
   justify-content: space-between;
+  gap: var(--gap-lg);
   align-items: center;
   padding: var(--padding-md) var(--padding-lg);
   background-color: var(--card);
   color: var(--card-foreground);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+
+  @container guestCard (width < 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const guestInfo = css`
@@ -26,33 +37,30 @@ export const guestInfo = css`
 export const actionButtons = css`
   display: flex;
   gap: var(--gap-sm);
+
+  @container guestCard (width < 500px) {
+    width: 100%;
+    button {
+      flex: 1;
+    }
+  }
 `;
 
 export const btnPrimary = css`
   background-color: var(--primary);
   color: var(--primary-foreground);
-  padding: var(--padding-sm) var(--padding-md);
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
 `;
 
 export const btnSecondary = css`
   background-color: var(--secondary);
   color: var(--secondary-foreground);
-  padding: var(--padding-sm) var(--padding-md);
-  border-radius: var(--radius-sm);
+
   border: 1px solid var(--border);
-  cursor: pointer;
 `;
 
 export const btnDestructive = css`
   background-color: var(--destructive);
   color: var(--primary-foreground);
-  padding: var(--padding-sm) var(--padding-md);
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
 `;
 
 export const formGroup = css`
@@ -74,7 +82,7 @@ export const dialogActions = css`
   display: flex;
   justify-content: flex-end;
   gap: var(--gap-sm);
-  margin-top: var(--margin-lg);
+  margin-top: var(--margin-2xl);
 `;
 
 export const dialogStyle = css`
@@ -85,9 +93,14 @@ export const dialogStyle = css`
   padding: var(--padding-lg);
   width: 100%;
   max-width: 400px;
+  margin: auto;
 
   &::backdrop {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
+  }
+
+  h2 {
+    margin-bottom: var(--margin-xl);
   }
 `;

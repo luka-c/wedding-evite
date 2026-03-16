@@ -12,7 +12,7 @@ export const EditGuestDialog: FC<{ guest: tGuest }> = ({ guest }) => {
   return (
     <dialog id={`edit-${guest.id}`} class={dialogStyle}>
       <form method="post" action={`/manage/guests/${guest.id}/edit`}>
-        <h2 class="text-2xl">Uredi gosta</h2>
+        <h2 class="text-3xl">Uredi gosta</h2>
 
         <div class={formGroup}>
           <label class="text-sm">Ime</label>

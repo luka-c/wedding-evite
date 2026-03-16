@@ -3,7 +3,7 @@ select {
   border: 1px solid;
   border-radius: var(--radius);
   border-color: var(--border);
-  padding: calc(var(--padding-sm) - 2px) var(--padding-lg) var(--padding-sm);
+  padding: var(--padding-sm) var(--padding-md);
 }
 
 input:active,

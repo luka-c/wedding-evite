@@ -11,12 +11,15 @@ export const DeleteGuestDialog: FC<{ guest: tGuest }> = ({ guest }) => {
   return (
     <dialog id={`delete-${guest.id}`} class={dialogStyle}>
       <form method="post" action={`/manage/guests/${guest.id}/delete`}>
-        <h2 class="text-xl">Brisanje</h2>
+        <h2 class="text-3xl">Brisanje</h2>
+
         <p class="text-md">Jeste li sigurni da želite obrisati {guest.names}?</p>
+
         <div class={dialogActions}>
           <button type="button" class={btnSecondary} onclick="this.closest('dialog').close()">
             Odustani
           </button>
+
           <button type="submit" class={btnDestructive}>
             Obriši
           </button>

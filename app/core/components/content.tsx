@@ -9,5 +9,9 @@ export const Content: FC<tContentProps> = (props) => {
 const wrapperClass = css`
   max-width: 1200px;
   margin-inline: auto;
-  padding: 5rem 2.5rem;
+  padding: var(--margin-2xl) var(--margin-lg) 0;
+
+  @media screen and (width > 1024px) {
+    padding: var(--margin-7xl) var(--margin-3xl) 0;
+  }
 `;

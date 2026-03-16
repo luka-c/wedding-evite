@@ -10,10 +10,14 @@
   "unstable": ["kv"],
   "tasks": {
     "start": "deno run -A index.tsx",
-    "dev": "deno run --allow-net --allow-read allow-env --watch index.tsx"
+    "dev": "deno run -A --watch index.tsx"
   },
   "compilerOptions": {
     "jsx": "precompile",
     "jsxImportSource": "hono/jsx"
+  },
+  "deploy": {
+    "org": "luka-c",
+    "app": "pozvani-ste"
   }
 }

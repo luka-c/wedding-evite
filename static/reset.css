@@ -57,3 +57,24 @@ img {
 p {
   max-width: 80ch;
 }
+
+button {
+  min-width: fit-content;
+  border: none;
+  cursor: pointer;
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--radius-sm);
+}
+
+button:has(> img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+button > img {
+  --image-size: 1rem;
+  width: var(--image-size);
+  height: var(--image-size);
+}

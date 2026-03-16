@@ -1,10 +1,10 @@
 import { FC } from "hono/jsx";
 import { tHeaderLinkProps } from "../props/header_link.props.tsx";
-import { css, cx } from "hono/css";
+import { css } from "hono/css";
 
 export const HeaderLink: FC<tHeaderLinkProps> = (props) => {
   return (
-    <a class={cx(linkClass, "text-xl")} href={props.link}>
+    <a class={linkClass} href={props.link}>
       {props.title}
     </a>
   );
@@ -12,19 +12,14 @@ export const HeaderLink: FC<tHeaderLinkProps> = (props) => {
 
 const linkClass = css`
   color: var(--foreground);
-  text-decoration: none;
+  text-decoration-color: transparent;
   padding: var(--padding-sm) var(--padding-lg);
   background-clip: padding-box;
-  border-width: 1px;
-  border-color: #0000;
-  border-radius: var(--radius-4xl);
+  border: none;
 
-  transition:
-    color var(--transition-duration) var(--timing-function),
-    background-color var(--transition-duration) var(--timing-function);
+  transition: text-decoration-color var(--transition-duration) var(--timing-function);
 
   &:hover {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
+    text-decoration-color: var(--primary);
   }
 `;
