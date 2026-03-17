@@ -27,7 +27,7 @@ export const GuestRow: FC<{ guest: tGuest }> = ({ guest }) => {
             onclick={`
             const url = window.location.origin + '/?id=${guest.id}';
             navigator.clipboard.writeText(url);
-            alert('Link kopiran');
+            window.showToast('Link kopiran uspješno!', 0);
           `}
           >
             <img src="static/svg/copy.svg" alt="" />

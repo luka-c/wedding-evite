@@ -16,6 +16,8 @@ export const Head: FC<tHeadProps> = (props) => {
       <link rel="stylesheet" href="static/colors.css" />
       <link rel="stylesheet" href="static/variables.css" />
       <link rel="stylesheet" href="static/inputs.css" />
+      <link rel="stylesheet" href="static/toast.css" />
+      <script src="static/js/toast.js"></script>
       <title>{props.title}</title>
     </head>
   );

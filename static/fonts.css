@@ -138,3 +138,22 @@
   font-size: var(--text-7xl);
   line-height: var(--text-7xl--line-height);
 }
+
+@keyframes reveal {
+  0% {
+    stroke-dashoffset: 999;
+  }
+
+  80% {
+    fill: linear-gradient(to top black 40%, transparent);
+  }
+
+  90% {
+    fill: var(--primary);
+  }
+
+  100% {
+    fill: var(--primary);
+    stroke-dashoffset: 0;
+  }
+}
