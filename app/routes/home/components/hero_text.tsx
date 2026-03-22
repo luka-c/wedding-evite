@@ -60,6 +60,9 @@ const heroTextContainer = css`
   }
 
   @media screen and (width > 1024px) {
+    padding-inline: 0 3rem;
+    justify-content: flex-end;
+
     svg {
       height: 15rem;
     }

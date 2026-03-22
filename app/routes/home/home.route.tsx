@@ -20,13 +20,12 @@ app.get("/", async (c) => {
 app.post("/rsvp", async (c) => {
   const body = await c.req.parseBody();
   const id = body.id as string;
-  const attending = parseInt(body.attending as string, 10);
 
-  if (id && !isNaN(attending)) {
+  if (id) {
     const guest = await guestService.get(id);
 
     if (guest) {
-      await guestService.update(id, guest.names, attending);
+      await guestService.update(id, guest.names, guest.attending);
       return c.redirect(`/?id=${id}&success=true`);
     }
   }

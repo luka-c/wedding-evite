@@ -19,14 +19,9 @@ export const rsvpContainer = css`
 `;
 
 export const formStyle = css`
-  background: var(--card);
-  padding: var(--padding-xl);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   gap: var(--gap-lg);
-  margin-top: var(--margin-lg);
 `;
 
 export const formGroup = css`
@@ -44,4 +39,30 @@ export const successAlert = css`
   border-radius: var(--radius-sm);
   text-align: center;
   margin-top: var(--margin-xl);
+`;
+
+export const invitedHeader = css`
+  text-align: center;
+  margin-bottom: var(--margin-7xl);
+`;
+
+export const info = css`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-xl);
+  margin-bottom: var(--margin-7xl);
+`;
+
+export const timeline = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-sm);
+`;
+
+export const infoHeader = css`
+  font-weight: bold;
 `;
