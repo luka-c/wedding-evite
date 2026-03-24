@@ -20,7 +20,7 @@ export const EditGuestDialog: FC<{ guest: tGuest }> = ({ guest }) => {
         </div>
 
         <div class={formGroup}>
-          <label class="text-sm">Broj dolazaka</label>
+          <label class="text-sm">Max. broj dolazaka</label>
           <input type="number" name="attending" value={guest.attending.toString()} required />
         </div>
 

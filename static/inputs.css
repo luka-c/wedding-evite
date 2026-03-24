@@ -1,5 +1,6 @@
 input,
 select {
+  font-size: 1rem;
   border: 1px solid;
   border-radius: var(--radius);
   border-color: var(--border);

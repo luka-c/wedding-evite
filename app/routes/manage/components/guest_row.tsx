@@ -17,7 +17,10 @@ export const GuestRow: FC<{ guest: tGuest }> = ({ guest }) => {
       <div class={guestCard}>
         <div class={guestInfo}>
           <p class="text-xl">{guest.names}</p>
-          <p class="text-sm">Dolazi: {guest.attending}</p>
+          <p class="text-sm" style="margin-top: var(--margin-sm);">
+            Pozvano: {guest.attending}
+          </p>
+          <p class="text-sm">Dolazi: {guest.confirmed ? guest.attending : 0}</p>
         </div>
 
         <div class={actionButtons}>

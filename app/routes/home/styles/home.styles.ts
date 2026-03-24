@@ -43,7 +43,12 @@ export const successAlert = css`
 
 export const invitedHeader = css`
   text-align: center;
-  margin-bottom: var(--margin-7xl);
+  margin-bottom: var(--margin-4xl);
+  font-weight: 400;
+
+  @media screen and (width > 1024px) {
+    margin-bottom: var(--margin-7xl);
+  }
 `;
 
 export const info = css`
@@ -51,7 +56,7 @@ export const info = css`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-xxl);
   margin-bottom: var(--margin-7xl);
 `;
 
@@ -60,9 +65,27 @@ export const timeline = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-xl);
+
+  span {
+    font-weight: 400;
+  }
 `;
 
 export const infoHeader = css`
-  font-weight: bold;
+  font-weight: 500;
+`;
+
+export const pleaseConfirm = css`
+  font-weight: 400;
+  text-align: center;
+`;
+
+export const submitButton = css`
+  margin-top: 1rem;
+  font-weight: 400;
+`;
+
+export const ornament = css`
+  width: min(90%, 500px);
 `;

@@ -42,6 +42,10 @@ body {
   background-color: var(--background);
 }
 
+body:has(.home) {
+  background-color: #fef2de;
+}
+
 hr {
   width: min(80%, 30ch);
   border-color: var(--muted-foreground);

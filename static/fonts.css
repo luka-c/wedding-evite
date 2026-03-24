@@ -144,16 +144,17 @@
     stroke-dashoffset: 999;
   }
 
-  80% {
-    fill: linear-gradient(to top black 40%, transparent);
+  100% {
+    stroke-dashoffset: 0;
   }
+}
 
-  90% {
-    fill: var(--primary);
+@keyframes addFill {
+  0% {
+    fill: transparent;
   }
 
   100% {
     fill: var(--primary);
-    stroke-dashoffset: 0;
   }
 }

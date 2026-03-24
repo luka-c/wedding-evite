@@ -40,14 +40,16 @@ export const HeroText: FC = () => {
 };
 
 const heroTextContainer = css`
-  display: flex;
+  display: grid;
   justify-content: center;
   gap: var(--gap-xxl);
-  margin-bottom: var(--margin-7xl);
-  padding-inline: var(--padding-sm);
+  padding: 0;
+  grid-template-columns: min-content;
+  margin-bottom: var(--margin-4xl);
 
   svg {
-    height: 5rem;
+    height: 8rem;
+    margin-inline: auto;
   }
 
   svg path {
@@ -56,12 +58,16 @@ const heroTextContainer = css`
     stroke-width: 0.1;
     stroke-dasharray: 999;
     stroke-dashoffset: 999;
-    animation: reveal 3s ease-in-out 1 forwards;
+    animation:
+      reveal 3s ease-in 1 forwards,
+      addFill 1s 2.5s ease-in forwards;
   }
 
   @media screen and (width > 1024px) {
-    padding-inline: 0 3rem;
-    justify-content: flex-end;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--margin-7xl);
+    padding-inline: 5rem 0;
 
     svg {
       height: 15rem;

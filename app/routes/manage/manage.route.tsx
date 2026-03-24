@@ -38,9 +38,10 @@ app.post("/guests/:id/edit", async (c) => {
 
   const names = body.names as string;
   const attending = parseInt(body.attending as string, 10);
+  const confirmed = parseInt(body.confirmed as string, 0);
 
-  if (id && names && !isNaN(attending)) {
-    await guestService.update(id, names, attending);
+  if (id && names && !isNaN(attending) && !isNaN(confirmed)) {
+    await guestService.update(id, names, attending, confirmed == 1);
   }
 
   return c.redirect("/manage");
