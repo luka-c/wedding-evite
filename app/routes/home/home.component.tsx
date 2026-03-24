@@ -10,6 +10,7 @@ import { cx } from "hono/css";
 import { PersonalMessage } from "./components/personal_message.tsx";
 import { WeddingInfo } from "./components/wedding_info.tsx";
 import { ConfirmForm } from "./components/confirm_form.tsx";
+import { Footer } from "../../core/components/footer.tsx";
 
 export const Home: FC<tHomeProps> = ({ guest }) => {
   return (
@@ -43,6 +44,7 @@ export const Home: FC<tHomeProps> = ({ guest }) => {
           </>
         )}
       </Content>
+      <Footer />
     </Layout>
   );
 };
