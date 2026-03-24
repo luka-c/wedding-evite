@@ -6,7 +6,7 @@ import { FC } from "hono/jsx";
 export const PersonalMessage: FC<tPersonalMessageProps> = (props) => {
   return (
     <div class={names}>
-      <span class="text-xl">Dragi {props.names}</span>
+      <span class="text-xl">Dragi/a {props.names}</span>
 
       <span class={cx(pleaseConfirm, "text-xl")}>
         Molimo Vas da nam potvrdite svoj dolazak i broj gostiju do 1. lipnja 2026.
