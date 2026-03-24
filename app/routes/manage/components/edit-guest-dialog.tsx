@@ -21,7 +21,13 @@ export const EditGuestDialog: FC<{ guest: tGuest }> = ({ guest }) => {
 
         <div class={formGroup}>
           <label class="text-sm">Max. broj dolazaka</label>
-          <input type="number" name="attending" value={guest.attending.toString()} required />
+          <input
+            type="number"
+            inputmode="numeric"
+            name="max_attending"
+            value={guest.max_attending.toString()}
+            required
+          />
         </div>
 
         <div class={dialogActions}>

@@ -6,7 +6,6 @@ const app = new Hono();
 
 app.get("/", async (c) => {
   const id = c.req.query("id");
-  const success = c.req.query("success") === "true";
 
   let guest = null;
 
@@ -14,23 +13,23 @@ app.get("/", async (c) => {
     guest = await guestService.get(id);
   }
 
-  return c.html(<Home guest={guest} success={success} />);
+  return c.html(<Home guest={guest} />);
 });
 
 app.post("/rsvp", async (c) => {
   const body = await c.req.parseBody();
   const id = body.id as string;
+  const attending = parseInt(body.attending as string, 10);
 
-  if (id) {
-    const guest = await guestService.get(id);
+  if (id && !isNaN(attending)) {
+    const success = await guestService.confirm(id, attending);
 
-    if (guest) {
-      await guestService.update(id, guest.names, guest.attending);
+    if (success) {
       return c.redirect(`/?id=${id}&success=true`);
     }
   }
 
-  return c.redirect("/");
+  return c.redirect(id ? `/?id=${id}` : "/");
 });
 
 export default app;

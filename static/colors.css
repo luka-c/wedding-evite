@@ -50,3 +50,7 @@ hr {
   width: min(80%, 30ch);
   border-color: var(--muted-foreground);
 }
+
+button:disabled {
+  opacity: 0.2;
+}

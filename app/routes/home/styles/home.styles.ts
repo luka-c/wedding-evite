@@ -22,6 +22,7 @@ export const formStyle = css`
   display: flex;
   flex-direction: column;
   gap: var(--gap-lg);
+  width: min(100%, 30ch);
 `;
 
 export const formGroup = css`
@@ -79,10 +80,10 @@ export const infoHeader = css`
 export const pleaseConfirm = css`
   font-weight: 400;
   text-align: center;
+  text-wrap: balance;
 `;
 
 export const submitButton = css`
-  margin-top: 1rem;
   font-weight: 400;
 `;
 

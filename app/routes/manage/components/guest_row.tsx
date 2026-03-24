@@ -10,15 +10,19 @@ import {
   guestCardContainer,
 } from "../styles/guest-styles.tsx";
 import { DeleteGuestDialog } from "./delete-guest-dialog.tsx";
+import { css, cx } from "hono/css";
 
 export const GuestRow: FC<{ guest: tGuest }> = ({ guest }) => {
   return (
     <div class={guestCardContainer}>
       <div class={guestCard}>
         <div class={guestInfo}>
-          <p class="text-xl">{guest.names}</p>
+          <p class={cx("text-xl", nameBlock)}>
+            <span class={cx(status, guest.confirmed ? "confirmed" : "")}></span>
+            {guest.names}
+          </p>
           <p class="text-sm" style="margin-top: var(--margin-sm);">
-            Pozvano: {guest.attending}
+            Pozvano: {guest.max_attending}
           </p>
           <p class="text-sm">Dolazi: {guest.confirmed ? guest.attending : 0}</p>
         </div>
@@ -62,3 +66,21 @@ export const GuestRow: FC<{ guest: tGuest }> = ({ guest }) => {
     </div>
   );
 };
+
+const status = css`
+  width: 8px;
+  height: 8px;
+  background: goldenrod;
+  border-radius: 100%;
+  margin-top: 1px;
+
+  &.confirmed {
+    background: #228b22;
+  }
+`;
+
+const nameBlock = css`
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+`;

@@ -19,7 +19,7 @@ import { btnPrimary } from "../manage/styles/guest-styles.tsx";
 import { HeroText } from "./components/hero_text.tsx";
 import { cx } from "hono/css";
 
-export const Home: FC<tHomeProps> = ({ guest, success }) => {
+export const Home: FC<tHomeProps> = ({ guest }) => {
   return (
     <Layout title="Dobrodošli | RSVP">
       <Content class="home">
@@ -45,22 +45,43 @@ export const Home: FC<tHomeProps> = ({ guest, success }) => {
                 <img class={ornament} src="static/svg/ornament.svg" />
 
                 <span class={cx(pleaseConfirm, "text-xl")}>
-                  Molimo potvrdite svoj dolazak do 1. lipnja 2026.
+                  Molimo vas da nam potvrdite svoj dolazak i broj gostiju do 1. lipnja 2026.
                 </span>
 
-                {success && (
-                  <div class={cx(successAlert, "text-xl")}>
-                    Hvala vam! Uspješno ste ažurirali svoj status dolaska.
+                <hr />
+
+                {guest.confirmed ? (
+                  <div class={cx(successAlert, "text-lg")}>
+                    Hvala vam! Uspješno ste potvrdili svoj status dolaska.
                   </div>
+                ) : (
+                  <form method="post" action="/rsvp" class={formStyle}>
+                    <input type="hidden" name="id" value={guest.id} />
+
+                    <input
+                      type="number"
+                      name="attending"
+                      disabled={guest.confirmed}
+                      value={
+                        guest.confirmed
+                          ? guest.attending.toString()
+                          : guest.max_attending.toString()
+                      }
+                      min="0"
+                      max={guest.max_attending.toString()}
+                      inputmode="numeric"
+                      required
+                    />
+
+                    <button
+                      disabled={guest.confirmed}
+                      type="submit"
+                      class={cx(btnPrimary, submitButton, "text-xl")}
+                    >
+                      Potvrdi dolazak
+                    </button>
+                  </form>
                 )}
-
-                <form method="post" action="/rsvp" class={formStyle}>
-                  <input type="hidden" name="id" value={guest.id} />
-
-                  <button type="submit" class={cx(btnPrimary, submitButton, "text-xl")}>
-                    Potvrdi dolazak
-                  </button>
-                </form>
               </div>
             </RsvpContainer>
           </>
