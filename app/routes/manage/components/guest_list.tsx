@@ -6,28 +6,29 @@ import { css } from "hono/css";
 
 export const GuestList: FC<{ guests: tGuest[] }> = ({ guests }) => {
   return (
-    <div class={listWrapper}>
-      <div class={count}>
-        <span class={chip}>
-          Ukupno pozvano:{" "}
-          <strong>
-            {guests.map((guest) => guest.max_attending).reduce((prev, sum) => (sum += prev))}
-          </strong>
-        </span>
-
-        <div class={vertical}></div>
-
-        <span class={chip}>
-          Ukupno potvrđeno:{" "}
-          <strong>
-            {guests.map((guest) => guest.attending).reduce((prev, sum) => (sum += prev))}
-          </strong>
-        </span>
-      </div>
+    <div className={listWrapper}>
       {guests.length === 0 ? (
-        <p class="text-md">Nema pozvanih gostiju.</p>
+        <p className="text-md">Nema pozvanih gostiju.</p>
       ) : (
-        guests.map((guest) => <GuestRow key={guest.id} guest={guest} />)
+        <>
+          <div className={count}>
+            <span className={chip}>
+              Ukupno pozvano:{" "}
+              <strong>{guests.reduce((sum, guest) => sum + (guest.max_attending || 0), 0)}</strong>
+            </span>
+
+            <div className={vertical}></div>
+
+            <span className={chip}>
+              Ukupno potvrđeno:{" "}
+              <strong>{guests.reduce((sum, guest) => sum + (guest.attending || 0), 0)}</strong>
+            </span>
+          </div>
+
+          {guests.map((guest) => (
+            <GuestRow key={guest.id} guest={guest} />
+          ))}
+        </>
       )}
     </div>
   );
