@@ -21,7 +21,7 @@ export const Footer: FC = () => {
 };
 
 const footerStyles = css`
-  border-top: 0.8px solid var(--muted-foreground);
+  border-top: 0.8px solid oklch(from #fef2de calc(0.8 * l) c h);
   width: 100%;
   display: flex;
   justify-content: center;

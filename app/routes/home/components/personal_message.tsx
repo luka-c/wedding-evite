@@ -9,7 +9,7 @@ export const PersonalMessage: FC<tPersonalMessageProps> = (props) => {
       <span class="text-xl">Dragi {props.names}</span>
 
       <span class={cx(pleaseConfirm, "text-xl")}>
-        Molimo vas da nam potvrdite svoj dolazak i broj gostiju do 1. lipnja 2026.
+        Molimo Vas da nam potvrdite svoj dolazak i broj gostiju do 1. lipnja 2026.
       </span>
     </div>
   );

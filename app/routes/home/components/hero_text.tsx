@@ -59,8 +59,8 @@ const heroTextContainer = css`
     stroke-dasharray: 999;
     stroke-dashoffset: 999;
     animation:
-      reveal 3s ease-in 1 forwards,
-      addFill 1s 2.5s ease-in forwards;
+      reveal 2.5s ease-in 1 forwards,
+      addFill 1s 2s ease-in forwards;
   }
 
   @media screen and (width > 1024px) {
