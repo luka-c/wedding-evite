@@ -21,7 +21,7 @@ export const Manage: FC = async (_) => {
 
           <input
             type="number"
-            name="attending"
+            name="max_attending"
             placeholder="Broj gostiju"
             min="0"
             inputmode="numeric"
