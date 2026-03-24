@@ -24,9 +24,10 @@ app.get("/", (c) => {
 app.post("/guests/add", async (c) => {
   const body = await c.req.parseBody();
   const names = body.names as string;
+  const max_attending = parseInt(body.max_attending as string, 0);
 
   if (names) {
-    await guestService.add(names, 0);
+    await guestService.add(names, max_attending);
   }
 
   return c.redirect("/manage");
@@ -37,7 +38,7 @@ app.post("/guests/:id/edit", async (c) => {
   const body = await c.req.parseBody();
 
   const names = body.names as string;
-  const max_attending = parseInt(body.max_attending as string, 10);
+  const max_attending = parseInt(body.max_attending as string, 1);
 
   if (id && names && !isNaN(max_attending)) {
     const guest = await guestService.get(id);
