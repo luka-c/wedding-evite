@@ -19,15 +19,15 @@ export const guestService = {
 
   async add(names: string, attending: number = 0): Promise<tGuest> {
     const id = crypto.randomUUID();
-    const guest: tGuest = { id, names, attending };
+    const guest: tGuest = { id, names, attending, confirmed: false };
     await kv.set(["guests", id], guest);
     return guest;
   },
 
-  async update(id: string, names: string, attending: number): Promise<void> {
+  async update(id: string, names: string, attending: number, confirmed: boolean): Promise<void> {
     const record = await kv.get<tGuest>(["guests", id]);
     if (record.value) {
-      await kv.set(["guests", id], { ...record.value, names, attending });
+      await kv.set(["guests", id], { ...record.value, names, attending, confirmed });
     }
   },
 
