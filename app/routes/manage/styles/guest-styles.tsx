@@ -5,6 +5,10 @@ export const listWrapper = css`
   flex-direction: column;
   gap: var(--gap-md);
   margin-top: var(--margin-lg);
+
+  @media screen and (width < 600px) {
+    padding-bottom: var(--padding-xl);
+  }
 `;
 
 export const guestCardContainer = css`

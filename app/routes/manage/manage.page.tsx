@@ -14,14 +14,21 @@ export const Manage: FC = async (_) => {
     <Layout title="Upravljanje pozivnicama">
       <Header />
       <Content>
-        <h1 class={cx(headerStyles, "text-3xl")} style="">
-          Pozvani ljudi
-        </h1>
+        <h1 class={cx(headerStyles, "text-3xl")}>Pozvani ljudi</h1>
 
-        <form method="post" action="/manage/guests/add" style="margin-block: 2rem;">
+        <form method="post" action="/manage/guests/add" class={formStyles}>
           <input type="text" name="names" placeholder="Ime(na) gosta" required />
 
-          <button style="margin-left: 1rem" type="submit" class={btnPrimary}>
+          <input
+            type="number"
+            name="attending"
+            placeholder="Broj gostiju"
+            min="0"
+            inputmode="numeric"
+            required
+          />
+
+          <button type="submit" class={btnPrimary}>
             Dodaj gosta
           </button>
         </form>
@@ -37,5 +44,29 @@ const headerStyles = css`
 
   @media screen and (width > 1024px) {
     margin-bottom: var(--margin-4xl);
+  }
+`;
+
+const formStyles = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+  margin-block: 2rem;
+
+  button {
+    margin-left: var(--margin-md);
+    font-size: 1rem;
+  }
+
+  @media screen and (width < 600px) {
+    input,
+    button {
+      flex: 1;
+    }
+
+    button {
+      margin-top: var(--margin-md);
+      margin-left: 0;
+    }
   }
 `;
