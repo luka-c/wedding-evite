@@ -11,6 +11,7 @@ export const ConfirmForm: FC<tConfirmFormProps> = (props) => {
 
       <input
         type="number"
+        style="text-align: center; border-color: var(--primary);"
         name="attending"
         disabled={props.guest.confirmed}
         value={

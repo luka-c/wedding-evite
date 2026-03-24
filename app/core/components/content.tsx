@@ -15,7 +15,7 @@ const wrapperClass = css`
     padding: var(--margin-7xl) var(--margin-3xl) 0;
 
     &.home {
-      padding: 0;
+      padding: var(--padding-xl) 0 0;
       min-height: 100dvh;
       display: flex;
       flex-direction: column;

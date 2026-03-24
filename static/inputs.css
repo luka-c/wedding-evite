@@ -5,6 +5,17 @@ select {
   border-radius: var(--radius);
   border-color: var(--border);
   padding: var(--padding-sm) var(--padding-md);
+  background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 input:active,

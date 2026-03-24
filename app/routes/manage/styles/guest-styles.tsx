@@ -64,7 +64,11 @@ export const btnSecondary = css`
 
 export const btnDestructive = css`
   background-color: var(--destructive);
-  color: var(--primary-foreground);
+  color: oklch(1 0 0);
+
+  img {
+    filter: none;
+  }
 `;
 
 export const formGroup = css`

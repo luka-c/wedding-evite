@@ -89,4 +89,5 @@ export const submitButton = css`
 
 export const ornament = css`
   width: min(90%, 500px);
+  fill: var(--foreground);
 `;
