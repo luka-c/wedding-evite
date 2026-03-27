@@ -59,6 +59,8 @@ const formStyles = css`
   }
 
   @media screen and (width < 600px) {
+    flex-direction: column;
+
     input,
     button {
       flex: 1;

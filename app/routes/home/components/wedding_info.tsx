@@ -1,13 +1,14 @@
 import { FC } from "hono/jsx";
-import { infoHeader, ornament, timeline } from "../styles/home.styles.ts";
+import { infoHeader, timeline } from "../styles/home.styles.ts";
 import { cx } from "hono/css";
+import { OrnamentImg } from "./ornament.tsx";
 
 export const WeddingInfo: FC = () => {
   return (
     <>
       <h5 class={cx("text-3xl", infoHeader)}>27. LIPNJA 2026.</h5>
 
-      <img class={ornament} src="static/svg/ornament.svg" />
+      <OrnamentImg />
 
       <div class={timeline}>
         <h5 class={cx("text-3xl", infoHeader)}>MANSION EVENT RESORT</h5>
@@ -16,7 +17,7 @@ export const WeddingInfo: FC = () => {
         <span class="text-xl">Svečana večera u 20 h</span>
       </div>
 
-      <img class={ornament} src="static/svg/ornament.svg" />
+      <OrnamentImg />
     </>
   );
 };
