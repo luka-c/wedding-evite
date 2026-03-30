@@ -11,12 +11,16 @@ const wrapperClass = css`
   margin-inline: auto;
   padding: var(--padding-xl) var(--padding-lg) 0;
 
+  &.home {
+    min-height: calc(100dvh - 100px);
+  }
+
   @media screen and (width > 1024px) {
     padding: var(--margin-7xl) var(--margin-3xl) 0;
 
     &.home {
       padding: var(--padding-xl) 0 0;
-      min-height: 100dvh;
+      min-height: calc(100dvh - 55px);
       display: flex;
       flex-direction: column;
       justify-content: center;

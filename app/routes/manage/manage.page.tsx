@@ -17,16 +17,18 @@ export const Manage: FC = async (_) => {
         <h1 class={cx(headerStyles, "text-3xl")}>Pozvani ljudi</h1>
 
         <form method="post" action="/manage/guests/add" class={formStyles}>
-          <input type="text" name="names" placeholder="Ime(na) gosta" required />
+          <input type="text" name="names" placeholder="*Ime(na) gosta" required />
 
           <input
             type="number"
             name="max_attending"
-            placeholder="Broj gostiju"
+            placeholder="*Broj gostiju"
             min="0"
             inputmode="numeric"
             required
           />
+
+          <input type="text" name="surname" placeholder="Prezime/nadimak" />
 
           <button type="submit" class={btnPrimary}>
             Dodaj gosta

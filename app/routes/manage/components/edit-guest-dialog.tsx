@@ -30,6 +30,11 @@ export const EditGuestDialog: FC<{ guest: tGuest }> = ({ guest }) => {
           />
         </div>
 
+        <div class={formGroup}>
+          <label class="text-sm">Prezime/nadimak</label>
+          <input type="text" name="surname" value={guest.surname} />
+        </div>
+
         <div class={dialogActions}>
           <button type="button" class={btnSecondary} onclick="this.closest('dialog').close()">
             Odustani

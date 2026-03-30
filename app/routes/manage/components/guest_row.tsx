@@ -19,7 +19,10 @@ export const GuestRow: FC<{ guest: tGuest }> = ({ guest }) => {
         <div class={guestInfo}>
           <p class={cx("text-xl", nameBlock)}>
             <span class={cx(status, guest.confirmed ? "confirmed" : "")}></span>
-            {guest.names}
+            <span class="text-xl">
+              {guest.names}{" "}
+              <span class={cx("text-xl", muted)}>{guest.surname && `(${guest.surname})`}</span>
+            </span>
           </p>
           <p class="text-sm" style="margin-top: var(--margin-sm);">
             Pozvano: {guest.max_attending}
@@ -83,4 +86,8 @@ const nameBlock = css`
   display: flex;
   align-items: center;
   gap: var(--gap-sm);
+`;
+
+const muted = css`
+  color: var(--muted-foreground);
 `;

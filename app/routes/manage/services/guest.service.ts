@@ -25,9 +25,9 @@ export const guestService = {
     return record.value ? normalizeGuest(record.value) : null;
   },
 
-  async add(names: string, max_attending: number = 0): Promise<tGuest> {
+  async add(names: string, max_attending: number = 0, surname?: string): Promise<tGuest> {
     const id = crypto.randomUUID();
-    const guest: tGuest = { id, names, attending: 0, max_attending, confirmed: false };
+    const guest: tGuest = { id, names, surname, attending: 0, max_attending, confirmed: false };
     await kv.set(["guests", id], guest);
     return guest;
   },
@@ -42,10 +42,18 @@ export const guestService = {
     max_attending: number,
     attending: number,
     confirmed: boolean,
+    surname?: string,
   ): Promise<void> {
     const record = await kv.get<tGuest>(["guests", id]);
     if (record.value) {
-      await kv.set(["guests", id], { ...record.value, names, max_attending, attending, confirmed });
+      await kv.set(["guests", id], {
+        ...record.value,
+        names,
+        surname,
+        max_attending,
+        attending,
+        confirmed,
+      });
     }
   },
 
