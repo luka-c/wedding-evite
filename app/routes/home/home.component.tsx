@@ -11,6 +11,7 @@ import { PersonalMessage } from "./components/personal_message.tsx";
 import { WeddingInfo } from "./components/wedding_info.tsx";
 import { ConfirmForm } from "./components/confirm_form.tsx";
 import { Footer } from "../../core/components/footer.tsx";
+import { AddToCalendar } from "./components/add_to_calendar.tsx";
 
 export const Home: FC<tHomeProps> = ({ guest }) => {
   return (
@@ -39,6 +40,8 @@ export const Home: FC<tHomeProps> = ({ guest }) => {
                 ) : (
                   <ConfirmForm guest={guest} />
                 )}
+
+                <AddToCalendar />
               </div>
             </RsvpContainer>
           </>
